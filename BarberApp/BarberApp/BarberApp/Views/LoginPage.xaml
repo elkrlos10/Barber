@@ -2,12 +2,124 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BarberApp.Views.LoginPage"
+             BackgroundImage="background"
              BindingContext="{Binding Main, Source={StaticResource Locator}}">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    
+    <AbsoluteLayout>
+        <Image Source="background"
+                AbsoluteLayout.LayoutFlags="All" 
+                AbsoluteLayout.LayoutBounds="0,0,1,1"/>
+
+        <Grid RowSpacing="10" 
+              BackgroundColor="Transparent" 
+              AbsoluteLayout.LayoutFlags="All" 
+              AbsoluteLayout.LayoutBounds="0,0,1,1">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!--<BoxView Color="Purple" Grid.Row="0"/>-->
+        <Grid Grid.Row="1" Padding="20" HeightRequest="150">
+            <Image Source="logo"/>
+        </Grid>
+        
+        <!--<BoxView  Color="White" Grid.Row="2"/>-->
+
+        <Grid Grid.Row="3" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <!-- Grid Campos de inicio de sesion -->
+            <Grid RowSpacing="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="40"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="1" RowSpacing="1">
+                
+                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                     <RowDefinition Height="Auto"/>
+                 </Grid.RowDefinitions>
+                
+                 <Label Text="Ingrese Usuario" 
+                        HorizontalOptions="Center"/>
+                <Entry Placeholder="Usuario"
+                       BackgroundColor="Transparent"
+                       HorizontalTextAlignment="Center"
+                       Grid.Row="1"/>
+            </Grid>
+            </Grid>
+            <!-- Grid Campos de inicio de sesion -->
+
+            <!-- Grid Campos de inicio de sesion -->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="40"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Text="Contraseña" HorizontalOptions="Center"/>
+                    <Entry Placeholder="Contraseña"
+                           BackgroundColor="Transparent"
+                           IsPassword="True"
+                           HorizontalTextAlignment="Center"
+                           Grid.Row="1"/>
+                </Grid>
+            </Grid>
+            <!-- Grid Campos de inicio de sesion -->
+
+            <!-- Grid Campos de inicio de sesion -->
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="40"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Button Text="Iniciar Sesión" 
+                            FontAttributes="Bold"
+                            BorderRadius="20" 
+                            TextColor="#2B2B2B" 
+                            BackgroundColor="White"/>
+                    <!--<Label VerticalOptions="EndAndExpand" HorizontalOptions="Center" Grid.Row="1" Text="¿Olvidó su contraseña?"/>-->
+                    <Label VerticalOptions="EndAndExpand" 
+                           HorizontalOptions="Start" 
+                           Grid.Row="1" 
+                           Text="No tiene una cuenta. "/>
+                    <Label VerticalOptions="EndAndExpand" 
+                           HorizontalOptions="End" 
+                           FontAttributes="Bold" 
+                           Grid.Row="1" 
+                           Text="Registrese aquí"/>
+                </Grid>
+            </Grid>
+            <!-- Grid Campos de inicio de sesion -->
+
+        </Grid>
+
+    </Grid>
+
+    </AbsoluteLayout>
+    
 </ContentPage>
